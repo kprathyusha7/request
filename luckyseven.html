@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>dice</title>
+<script>
+function myfunc()
+{
+var x=document.getElementById("name").value;
+//var coins=document.getElementById("coins").value;
+//var dice=document.getElementById("dice").value;
+//var coins=parseInt(coins);
+//var r1= Math.floor(Math.random() * 13);
+var r1=10;
+var dice="great";
+var coins=25;
+if(r1>0)
+{
+if(dice=="equals")
+{
+if(r1==7)
+{
+coins=coins*2;
+document.getElementById("result").innerHtml="your coins are doubled"+coins;
+alert(coins);
+}
+else
+{
+document.getElementById("result").innerHtml="you didnt win"+coins;
+alert(coins);
+}
+}
+else if(dice=="less")
+{
+if(r1<7)
+{
+coins=coins*2;
+alert(coins);
+document.getElementById("result").innerHtml="your coins are doubled"+coins;
+}
+else
+{
+document.getElementById("result").innerHtml="no win"+coins;
+alert("no win");
+}
+}
+else
+{
+if(r1>7)
+{
+coins=coins*3;
+alert(coins);
+document.getElementById("result").innerHtml="Hurray!your coins are tripled"+coins;
+}
+else
+{
+document.getElementById("result").innerHtml="you didnt win"+coins;
+alert(coins);
+}
+}
+
+else
+{
+
+}
+}
+}
+</script>
+</head>
+<body>
+enter name
+<input type="text" name="name" id="name"><br>
+coinstobebet
+<input type="number" name="coins" id="coins"><br>
+rollthe dice
+
+<select name="dice" id="dice">
+<option value="equal">equals7</option>
+<option value="great">higher</option>
+<option value="less">lower</option>
+</select>
+<input type="submit" value="submit" onclick="myfunc()">
+<p id="result"> hello</p>
+</body>
+</html>
